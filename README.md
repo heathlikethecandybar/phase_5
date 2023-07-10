@@ -1,4 +1,4 @@
-![cover](/images/title_image.jpeg)
+![cover](/images/title_image.png)
 
 # Diabetes Classification
 
@@ -49,23 +49,65 @@ Additional information about this dataset can be found on the [Kaggle](https://w
 
 ## Methods
 
+After our exploratory analysis, we employed classfication methodolgies to see if we could accurately predict a diabetes diagnosis within our data.  We trained our model on 80% of the dataset, while saving the remaining 20% to test our assumptions in what our algorithms learned.  We leveraged a Logistic Regression model, and tuned the regression's hyperparameters to arrive at our baseline model.  
 
+That model was then iterated on, leveraging multiple models such as Decision Tree, Random Forest, XGBoost, and MLP Neural Network to evaluate the best model.  Each approach was modeled with and without tuned hyperparameters.  
+
+Overall, our best-performing model for our metrics of interest was the tuned XGBoost, achieving a precision score of 88% and 89% on the train and test sets respectively. It demonstrated excellent accuracy in identifying true positive cases of diabetes while minimizing false positives.
+
+When considering the F1 score, which balances precision and recall, the best decision tree and random forest models showed the highest scores. These however were being influenced by the extremely high precision score, not taking into account the recall performance (as much).  When looking at our XGBoost models, these models achieved F1 scores of around 80% on the test set, indicating a good balance between precision and recall.  They were not the highest, but they also had performed better and more evenly across all metrics.
+
+In summary, our models demonstrated strong performance in accurately classifying diabetes cases. The XGBoost, with its balanced performance across precission, F1 score, and ultimately receall show promising potential for accurately predicting diabetes in future applications.
+
+For our final model, we were able to predict positive diabetes diagnoses 89% of the time.
+
+![final_confusion](/images/final_confusion.png)
+
+The top 3 features that influence diabetes diagnosis are: 
+
+`HbA1c`, 
+`Blood Glucose Level`, 
+`Age`  
+
+These top features make a lot of sense as they are essential in definiing and measuring diabetes diagnosis.  So patients that have high markers in these features are very highly likely to have diabetes.  Age, and other comorbid factors such as smoking history, and Body Mass Index (BMI) are also high risk factors for acquiring the preventable disease.  These latter factors are very tightly coupled with lifestyle choices, which is where our interventions can make a difference in reducing risk for the patient.
+
+![feature_importance](/images/feature_importance.png)
 
 
 ## Results
 
+Customers that had the internation plan feature on their plan churned at a higher rate than those without the international plan feature.  Customers that have the international plan feature churn at a rate near 40% vs those without the feature at 11%.  Understanding why this feature is causing so much dissatisfaction will be an important task for the company to understand. 
 
+![international_plan_churn](https://github.com/heathlikethecandybar/phase_3_project/blob/main/phase_3/project/images/international_plan_churn.png)
+
+The second most important feature in our data set was customers that were contacting customer service multiple times.  This could be service related, or it could be related to general questions, however once a customer reaches 4 customer service calls, the churn rate goes up significantly.  Churn rate jumps close to 45% once a customer reaches 4 customer service calls.
+
+![churn_cs_calls](https://github.com/heathlikethecandybar/phase_3_project/blob/main/phase_3/project/images/churn_cs_calls.png)
+
+As the product is used, charges are increasing.  What we really want to investigate though is if the price per minute is going down, as the the total minutes go up.  If there was a strategic pricing, I think we would want to see the price per minute go down, but the charges stay flat because of the increase in minutes used.  I think we would actually want to see a negative slope here indicating that the customers that use the product the most, would be getting a slight discount on pricing as usage increases.  Looking at different pricing mechanisms and strategies may also help with customer sentiment and experience, impacting overall churn.
+
+![price_per_minute](https://github.com/heathlikethecandybar/phase_3_project/blob/main/phase_3/project/images/price_per_minute.png)
 
 
 ## Conclusions & Recommendations
 
-In conclusion, we were able to create a recommendation model that will accurately recommend movie titles to an end user.  By leveraging this model, the online streaming company will have an engagement tool they can use, and measure to gain additional users, and build loyalty within their existing user base. Moving forward, integrating and testing the recommendation algorithm will be key and are summarized below.
+In our diabetes classification problem, we aimed to develop models that could accurately predict the presence of diabetes based on various features. We evaluated the performance of several models, including logistic regression, decision trees, random forest, XGBoost, and MLP neural network.
 
-- **1**
+Overall, our best-performing model for precision was the tuned random forest, achieving a precision score of 100% on both the train and test sets. It demonstrated excellent accuracy in identifying true positive cases of diabetes while minimizing false positives. The decision tree model also achieved high precision scores, but its performance was slightly lower compared to the random forest.
 
-- **2**
+When considering the F1 score, which balances precision and recall, the best decision tree and random forest models showed the highest scores. These models achieved F1 scores of around 80% on the test set, indicating a good balance between precision and recall.
 
-- **3**
+In summary, our models demonstrated strong performance in accurately classifying diabetes cases. The random forest model, with its high precision, and the decision tree model, with a balanced F1 score, show promising potential for accurately predicting diabetes in future applications.
+
+- **Run the algorithm on new data.**
+
+- **Continually evole the datasets that are being used for prediction.**
+
+- **Try to understand time, and impact of additional metrics in #2 and early diagnosis.**
+
+- **Evaluate impact of interventions on classified population vs those that were not classified for programming.**
+
+- **Load data into centralized repository for sharing into operational systems.**
 
 
 ## For More Information
