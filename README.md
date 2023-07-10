@@ -78,15 +78,11 @@ These top features make a lot of sense as they are essential in definiing and me
 
 Customers that had the internation plan feature on their plan churned at a higher rate than those without the international plan feature.  Customers that have the international plan feature churn at a rate near 40% vs those without the feature at 11%.  Understanding why this feature is causing so much dissatisfaction will be an important task for the company to understand. 
 
-![international_plan_churn](https://github.com/heathlikethecandybar/phase_3_project/blob/main/phase_3/project/images/international_plan_churn.png)
+![precision_compare](images/precision_compare_.png)
 
 The second most important feature in our data set was customers that were contacting customer service multiple times.  This could be service related, or it could be related to general questions, however once a customer reaches 4 customer service calls, the churn rate goes up significantly.  Churn rate jumps close to 45% once a customer reaches 4 customer service calls.
 
-![churn_cs_calls](https://github.com/heathlikethecandybar/phase_3_project/blob/main/phase_3/project/images/churn_cs_calls.png)
-
-As the product is used, charges are increasing.  What we really want to investigate though is if the price per minute is going down, as the the total minutes go up.  If there was a strategic pricing, I think we would want to see the price per minute go down, but the charges stay flat because of the increase in minutes used.  I think we would actually want to see a negative slope here indicating that the customers that use the product the most, would be getting a slight discount on pricing as usage increases.  Looking at different pricing mechanisms and strategies may also help with customer sentiment and experience, impacting overall churn.
-
-![price_per_minute](https://github.com/heathlikethecandybar/phase_3_project/blob/main/phase_3/project/images/price_per_minute.png)
+![final_model_compare](/images/final_model_compare.png)
 
 
 ## Conclusions & Recommendations
