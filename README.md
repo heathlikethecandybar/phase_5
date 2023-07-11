@@ -50,7 +50,13 @@ Additional information about this dataset can be found on the [Kaggle](https://w
 
 After our exploratory analysis, we employed classfication methodolgies to see if we could accurately predict a diabetes diagnosis within our data.  We trained our model on 80% of the dataset, while saving the remaining 20% to test our assumptions in what our algorithms learned.  We leveraged a Logistic Regression model, and tuned the regression's hyperparameters to arrive at our baseline model.  
 
-That model was then iterated on, leveraging multiple models such as Decision Tree, Random Forest, XGBoost, and MLP Neural Network to evaluate the best model.  Each approach was modeled with and without tuned hyperparameters.  
+That model was then iterated on, leveraging multiple models such as Decision Tree, Random Forest, XGBoost, and MLP Neural Network to evaluate the best model.  Each approach was modeled with and without tuned hyperparameters.
+
+Our target class or variable was 'diabetes' column.  This included either a 1 or a 0, and was present approximately 8.5% of the records included.
+
+![target_imbalance](images/target_imbalance.png)
+
+Because of this target imbalance we used SMOTE (Synthetic Minority Oversmapling Technique) to generate new instance from existing minority cases that we used as the input.  In addition to SMOTE, we also used Standard Scaling in our pipeline to ensure that no features were weighted because of their difference in scale value.
 
 Overall, our best-performing model for our metrics of interest was the tuned XGBoost, achieving a precision score of 88% and 89% on the train and test sets respectively. It demonstrated excellent accuracy in identifying true positive cases of diabetes while minimizing false positives.
 
